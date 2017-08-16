@@ -5,7 +5,7 @@ import Hello from './index';
 
 export default class Container extends React.Component{
     render(){
-        let prop={
+        const prop={
             title:'Hello World!',
             subTitle:'This is my first react demo'
         }
