@@ -4,7 +4,8 @@
         ["es2015", { "modules": false }],
 
         // Transpile React components to JavaScript
-        "react"
+        "react", 
+        "stage-0"
     ],
     "plugins":[
         // Enables React code to work with HMR.
