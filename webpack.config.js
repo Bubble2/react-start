@@ -12,7 +12,7 @@ module.exports={
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist')
     },
-    devtool:'inline-source-map',
+    devtool:'cheap-module-eval-source-map',
     devServer:{
         hot:true,
         compress:true,
