@@ -30,6 +30,29 @@ export const PropString = (props) => {
     )
 }
 
+export const PropComponentRight = () => {
+    return(
+        <div>我是右边的组件</div>
+    )
+}
+
+export const PropComponentLeft = () => {
+    return(
+        <div>我是左边的组件</div>
+    )
+}
+
+export const PropComponent = (props) => {
+    return(
+        <div>
+            <div style={{"float":"left","width":"33.3%"}}>{props.left}</div>
+            <div style={{"float":"left","width":"33.3%"}}>我是中间内容</div>
+            <div style={{"float":"right","width":"33.3%"}}>{props.right}</div>
+        </div>
+    )
+}
+
+
 export const PropBool = (props) => {
     return (
         <div>
