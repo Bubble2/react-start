@@ -12,14 +12,14 @@ export default class Container extends React.Component{
 
         /***********jsx***********/
 
-        //----------------------------------------------------使用jsx创建组件
+        //----------------------------------------------------使用jsx创建元素
         return (
             <div>
                 <ButtonComponent size="xl" color="primary">我是一个小小的按钮组件</ButtonComponent>
             </div>
         )
 
-        //----------------------------------------------------不适用jsx创建组件
+        //----------------------------------------------------不使用jsx创建元素
         // return React.createElement(
         //     ButtonComponent,
         //     {size:'xl',color:'primary'},
