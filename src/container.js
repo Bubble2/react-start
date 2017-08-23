@@ -4,7 +4,7 @@ import {ButtonComponent,NameSpaceComponent,PropExpression,PropString,PropCompone
 
 import {CreateClassComponent,ClassCompoennt,FnComponent,SingleComponent,Comment} from './demo/component';
 
-import {ModifyProp,PropTypesComponent,ModifyState,UpdateStateAsync,SetStateCallback} from './demo/propstate';
+import {ModifyProp,ParentComponent,ParentComponent2,PropTypesComponent,ModifyState,UpdateStateAsync,SetStateCallback} from './demo/propstate';
     
 
 export default class Container extends React.Component{
@@ -196,6 +196,16 @@ export default class Container extends React.Component{
         //----------------------------------------------------props在组件内不是不能修改的
         // return(
         //     <ModifyProp msg="I am ModifyProp" />
+        // )
+
+        //----------------------------------------------------父组件改变子组件的props
+        // return(
+        //     <ParentComponent />
+        // )
+
+        //----------------------------------------------------子组件改变父组件的state
+        // return(
+        //     <ParentComponent2 />
         // )
 
         //----------------------------------------------------使用`PropTypes`进行类型检查

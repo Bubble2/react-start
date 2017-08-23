@@ -33,6 +33,82 @@ export class ModifyState extends React.Component{
     }
 }
 
+const ChildComponent = (props) =>{
+    return(
+        <div>{props.value}</div>
+    )
+}
+
+export class ParentComponent extends React.Component{
+    constructor(props){
+      super(props);
+      this.state={
+        value:0
+      }
+      this.handleChange=this.handleChange.bind(this);
+    }
+  
+    handleChange(e){
+      this.setState({
+        value:e.target.value
+      })
+    }
+  
+    render(){
+      return(
+        <div>
+          <input type="text" onChange={this.handleChange} />
+          <ChildComponent value={this.state.value} />
+        </div>
+      )
+    }
+}
+
+
+class ChildComponent2 extends React.Component{
+    constructor(props){
+      super(props);
+      this.handleChange=this.handleChange.bind(this);
+    }
+  
+    handleChange(e){
+      this.props.onValueChange(e.target.value);
+    }
+  
+    render(){
+      return(
+        <div>
+          <input type="text" onChange={this.handleChange}/>
+        </div>
+      )
+    }
+}
+
+export class ParentComponent2 extends React.Component{
+    constructor(props){
+      super(props);
+      this.state={
+        value:0
+      }
+      this.changeHandle=this.changeHandle.bind(this);
+    }
+  
+    changeHandle(value){
+      this.setState({
+        value
+      })
+    }
+  
+    render(){
+      return(
+        <div>
+          <ChildComponent2 onValueChange={this.changeHandle} />
+          {this.state.value}
+        </div>
+      )
+    }
+}
+
 export const PropTypesComponent = (props) =>{
     return(
       <div>{props.num}</div>
