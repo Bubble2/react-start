@@ -7,7 +7,8 @@ import FormDemo from 'components/Demo1'
 import FormDemo2 from 'components/Demo2'
 import FormDemo3 from 'components/Demo3'
 
-import 'style/index.scss';
+import "style/theme.less"; 
+import 'style/common.less';
 
 const {Header, Footer, Sider, Content} = Layout;
 

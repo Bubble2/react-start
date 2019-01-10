@@ -17,7 +17,7 @@ module.exports = webpackMerge(
         module: {
             rules: [
                 {
-                    test: /\.(scss|css)$/,
+                    test: /\.less$/,
                     use: [
                         {
                             loader: MiniCssExtractPlugin.loader,
@@ -41,9 +41,9 @@ module.exports = webpackMerge(
                             }
                         },
                         {
-                            loader: 'sass-loader',
+                            loader: 'less-loader',
                             options: {
-                                sourceMap: true
+                                javascriptEnabled: true
                             }
                         }
                     ]
@@ -51,7 +51,7 @@ module.exports = webpackMerge(
             ]
         },
         plugins: [
-            //清楚dist目录文件
+            //清除dist目录文件
             new CleanWebpackPlugin(['dist'],{
                 root: path.resolve(__dirname, '../')   //根目录
             }),

@@ -1,5 +1,8 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import { bindActionCreators } from 'redux';
 import {Form, Icon, Input, Button} from 'antd';
+import {login} from '../actions'; 
 
 function hasErrors(fieldsError) {
     return Object.keys(fieldsError).some(field => fieldsError[field]);
@@ -17,8 +20,13 @@ class FormDemo extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
+        const {login} = this.props;
         this.props.form.validateFields((err, values) => {
             if(!err){
+                login({
+                    username: values.userName,
+                    password: values.password
+                })
                 console.log('Received values of form:', values);
             }
         })
@@ -64,4 +72,18 @@ class FormDemo extends React.Component{
     }
 }
 
-export default Form.create()(FormDemo);
+const Demo1 = Form.create()(FormDemo)
+
+
+const mapStateToProps = state => {
+    return {
+        loginInfo: state.loginInfo
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return bindActionCreators({
+        login
+    }, dispatch)
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Demo1);

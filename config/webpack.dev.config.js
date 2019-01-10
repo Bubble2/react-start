@@ -16,12 +16,18 @@ module.exports = webpackMerge(
             disableHostCheck: true,
             host: '0.0.0.0',
             hot: true,
-            historyApiFallback: true
+            historyApiFallback: true,
+            proxy: {
+                '/api/': {
+                    target: 'https://www.easy-mock.com/mock/5c2ec646178a5d7958d8d151/',
+                    changeOrigin: true
+                }
+            }
         },
         module: {
             rules: [
                 {
-                    test: /\.(scss|css)$/,
+                    test: /\.less$/,
                     use: [
                         {
                             loader: 'style-loader',
@@ -46,9 +52,10 @@ module.exports = webpackMerge(
                             }
                         },
                         {
-                            loader: 'sass-loader',
+                            loader: 'less-loader',
                             options: {
-                                sourceMap: true
+                                sourceMap: true,
+                                javascriptEnabled: true
                             }
                         }
                     ]
