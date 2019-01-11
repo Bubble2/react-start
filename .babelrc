@@ -1,28 +1,28 @@
 {
-    "presets":[
-        [
-            "@babel/preset-env",   //根据配置的目标浏览器或者运行环境来自动编译es6代码
-            {
-                "modules": false,
-                "targets": {
-                    "ie": "9"
-                },
-                "useBuiltIns": "entry",
-                "debug": false
-            }
-        ],
-        "@babel/preset-react"   //编译jsx语法
-    ],
-    "plugins": [
-        //启动react代码热替换
-        "react-hot-loader/babel",
-        //自动引入antd组件的css
-        [
-            "import",
-            {
-                "libraryName": "antd",
-                "style": true
-            }
-        ]
-    ]
+	"presets": [
+		[
+			"@babel/preset-env", //根据配置的目标浏览器或者运行环境来自动编译es6代码
+			{
+				"modules": false,
+				"targets": {
+					"ie": "9"
+				},
+				"useBuiltIns": "entry",
+				"debug": false
+			}
+		],
+		"@babel/preset-react" //编译jsx语法
+	],
+	"plugins": [
+		//启动react代码热替换
+		"react-hot-loader/babel",
+		//自动引入antd组件的css
+		[
+			"import",
+			{
+				"libraryName": "antd",
+				"style": true
+			}
+		]
+	]
 }
